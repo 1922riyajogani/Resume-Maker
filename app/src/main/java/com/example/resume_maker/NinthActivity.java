@@ -28,7 +28,7 @@ public class NinthActivity extends AppCompatActivity {
 
         String fname = preferences.getString("fname","");
 
-        fname.setText("Name:"+fname);
+
 
     }
 }
