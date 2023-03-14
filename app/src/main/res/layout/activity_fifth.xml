@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:gravity="center"
+    tools:context=".FifthActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="10dp"
+        android:layout_marginBottom="30dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardElevation="10dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#114084"
+        android:text="Hobby"
+        android:textSize="22dp"
+        android:letterSpacing="0.2"
+        android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/dance"
+            android:layout_width="301dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/string"
+            android:text="   Dance"
+            android:textColor="#769FCD"
+            android:textSize="20dp" />
+
+        <CheckBox
+            android:id="@+id/singing"
+            android:textSize="20dp"
+            android:textColor="#769FCD"
+            android:background="@drawable/string"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="   Singing" />
+
+        <CheckBox
+            android:id="@+id/movie"
+            android:background="@drawable/string"
+            android:textSize="20dp"
+            android:textColor="#769FCD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="   Movie" />
+
+        <CheckBox
+            android:id="@+id/drawing"
+            android:background="@drawable/string"
+            android:layout_width="match_parent"
+            android:textSize="20dp"
+            android:textColor="#769FCD"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="   Drawing" />
+
+        <CheckBox
+            android:id="@+id/reading"
+            android:background="@drawable/string"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#769FCD"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:text="   Reading" />
+   </LinearLayout>
+
+    <TextView
+        android:id="@+id/next"
+        android:background="@drawable/button"
+        android:layout_width="360dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_height="56dp"
+        android:layout_marginTop="30dp"
+        android:textSize="22dp"
+        android:text="NEXT" />
+</LinearLayout>
