@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,11 +17,17 @@ public class ThirdActivity extends AppCompatActivity {
 
     TextView next;
 
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
+
+        preferences = getSharedPreferences("Data",0);
+        editor = preferences.edit();
 
         ejf = findViewById(R.id.ejf);
         location = findViewById(R.id.location);
@@ -46,6 +53,13 @@ public class ThirdActivity extends AppCompatActivity {
                 }else if (JobTitle.isEmpty()){
                     jt.setError("Enter Job Title!");
                 }else {
+
+                    editor.putString("ejf",EnterJobFunction);
+                    editor.putString("location",Location);
+                    editor.putString("yoe",YearofExpirience);
+                    editor.putString("jt",JobTitle);
+                    editor.commit();
+
                     Intent intent=new Intent(ThirdActivity.this,FourthActivity.class);
                     startActivity(intent);
                 }

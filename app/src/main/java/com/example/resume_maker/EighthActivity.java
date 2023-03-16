@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 public class EighthActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class EighthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_eighth);
 
     LinearLayout template1 = findViewById(R.id.template1);
-        preferences = getSharedPreferences("Data",0);
+    LinearLayout template2 = findViewById(R.id.template2);
 
 
     template1.setOnClickListener(new View.OnClickListener() {
@@ -32,10 +32,14 @@ public class EighthActivity extends AppCompatActivity {
     }
 });
 
-        String fname = preferences.getString("fname","");
-        String lname = preferences.getString("lname","");
-        String email = preferences.getString("email","");
-        String contact = preferences.getString("phone","");
+        template2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(EighthActivity.this, tenthActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

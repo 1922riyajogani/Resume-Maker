@@ -3,6 +3,7 @@ package com.example.resume_maker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -14,10 +15,16 @@ public class SeventhActivity extends AppCompatActivity {
 
     TextView next;
 
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seventh);
+
+        preferences = getSharedPreferences("Data",0);
+        editor = preferences.edit();
 
         pt = findViewById(R.id.pt);
         role = findViewById(R.id.role);
@@ -43,6 +50,12 @@ public class SeventhActivity extends AppCompatActivity {
                 }else if (InstituteCompany.isEmpty()){
                     ic.setError("Enter Institute or Company!");
                 }else {
+
+                    editor.putString("pt",Projecttitle);
+                    editor.putString("location",Location);
+                    editor.putString("role",Role);
+                    editor.putString("ic",InstituteCompany);
+                    editor.commit();
 
                     Intent intent = new Intent(SeventhActivity.this, EighthActivity.class);
                     startActivity(intent);
